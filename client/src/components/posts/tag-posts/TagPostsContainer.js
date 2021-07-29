@@ -24,7 +24,7 @@ const TagPostsContainer = ({ match }) => {
       {posts !== undefined && posts.length === 0 ? (
         <Text mt='2rem'>No results found in {tag.toUpperCase()}</Text>
       ) : (
-        <Text mt='2rem' mb='3rem'>
+        <Text mt='2rem' mb='3rem' fontSize='2.5rem'>
           Popular posts in {'  '}
           <Text inline fontWeight='bold'>
             {tag.toUpperCase()}

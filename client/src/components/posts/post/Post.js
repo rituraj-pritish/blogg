@@ -13,6 +13,7 @@ import Div from 'src/components/ui/Div';
 import Button from 'src/components/ui/Button';
 import { Link } from 'react-router-dom';
 import Icon from 'src/components/ui/Icon';
+import {ReactComponent as ClockIcon} from 'src/assets/icons/clock.svg'
 
 import CommentsContainer from './comments/CommentsContainer';
 import AuthorBrief from './author-brief/AuthorBrief';
@@ -45,11 +46,6 @@ const Post = ({
   const readTime =
     parseInt(content.split(' ').length / AVG_WORDS_READ_IN_ONE_MINUTE) + 1;
 
-  const postTags = tags.map((tag, i) => {
-    const upperCasedTag = tag[0].toUpperCase() + tag.slice(1);
-    if (i === tags.length - 1) return <span key={i}>{upperCasedTag}</span>;
-    return <span key={i}>{upperCasedTag + ', '}</span>;
-  });
   return (
     <Div m='2rem auto' maxWidth='800px' textAlign='center'>
       {isAuthor && (
@@ -59,15 +55,15 @@ const Post = ({
           </Link>
         </Div>
       )}
-      <Text fontSize={['2.5rem', '3rem', '4rem']}>
+      <Text color='primary' fontSize={['2.5rem', '3rem', '4rem']}>
         {title[0].toUpperCase() + title.slice(1)}
       </Text>
 
-      <Div display='flex' justifyContent='space-between' color='darkGrey'>
-        <Text>{readTime} min read</Text>
-        <Text>
-          <Moment format='D MMM YYYY'>{date}</Moment>
-        </Text>
+      <Div display='flex' justifyContent='space-between' color='darkGrey' mt='1rem'>
+        <Text><Moment format='D MMM YYYY'>{date}</Moment></Text>
+        <Div display='flex' alignItems='center'>
+          <Text ml='4px'>{readTime} min read</Text>
+        </Div>
       </Div>
       
       <BackgroundContainer>

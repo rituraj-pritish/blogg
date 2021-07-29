@@ -55,7 +55,7 @@ const SignInContainer = ({ isAuth }) => {
   };
 
   return (
-    <Page m='1rem 0' pb='0 !important'>
+    <Page m='1rem auto' pb='0 !important'>
       <Suspense fallback={<ComponentLoader />}>
         <Div maxWidth='500px' m='0 auto' textAlign='center'>
           <Link to='/'>

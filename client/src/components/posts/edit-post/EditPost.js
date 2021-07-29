@@ -15,12 +15,27 @@ const EditPost = ({
   imageUrl,
   setImageUrl,
   setImage,
-  deletePost
+  deletePost,
+  isEditing
 }) => {
   const { title, content, tags } = formData;
 
   return (
     <Page>
+      {isEditing && (
+        <Div textAlign='right'>
+          <Button
+            onClick={deletePost}
+            variant='secondary'
+            borderColor='red'
+            color='red'
+            p='1rem 3rem'
+            mb='1.5rem'
+          >
+            Delete Post
+          </Button>
+        </Div>
+      )}
       <form onSubmit={handleSubmit}>
         <Input
           type='text'
@@ -55,21 +70,12 @@ const EditPost = ({
           m='0.5rem 0'
         />
 
-        <Button m='1rem 0' p='0.5rem 3rem'>
-          Submit
-        </Button>
+        <Div textAlign='right'>
+          <Button m='1rem 0' p='1rem 3rem'>
+            Submit
+          </Button>
+        </Div>
       </form>
-      <Div textAlign='right'>
-        <Button
-          onClick={deletePost}
-          variant='secondary'
-          borderColor='red'
-          color='red'
-          mb='1.5rem'
-        >
-          Delete Post
-        </Button>
-      </Div>
     </Page>
   );
 };

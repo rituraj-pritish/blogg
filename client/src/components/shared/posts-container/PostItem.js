@@ -54,7 +54,7 @@ const PostItem = ({
             </StyledLikes>
           )}
         </Background>
-        <Text className='post-item-title' fontSize='2.5rem' fontWeight='bold'>
+        <Text color='primary' className='post-item-title' fontSize='2.5rem' fontWeight='bold'>
           {title}
         </Text>
         <Text className='post-item-content'>

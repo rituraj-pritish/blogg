@@ -19,7 +19,6 @@ export const StyledPostItem = styled.div`
 
   &:hover > p {
     transition: 0.2s;
-    color: black;
   }
 
   & > div > p:first-child:hover,
@@ -73,6 +72,7 @@ export const StyledPostItem = styled.div`
     }
   }
 `;
+
 export const Divider = styled.div`
   height: 2px;
   background: grey;

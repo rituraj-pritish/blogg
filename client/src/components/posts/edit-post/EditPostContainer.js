@@ -148,6 +148,7 @@ const EditPostContainer = ({ match, history }) => {
       setImageUrl={setImageUrl}
       setImage={setImage}
       deletePost={deletePost}
+      isEditing={!createPost}
     />
   );
 };
